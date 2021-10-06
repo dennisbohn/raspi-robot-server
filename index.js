@@ -5,6 +5,9 @@ const server = {
 	rooms: {
 		"robo1": {
 			"authCode": "f7De!jo9fxHwkVc7h!fLtuM856Df32J9"
+		},
+		"robo2": {
+			"authCode": "f7De!jo9fxHwkVc7h!fLtuM856Df32J9"
 		}
 	}
 }
