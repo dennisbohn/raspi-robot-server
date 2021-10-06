@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <title>Test</title>
+                <meta charset="UTF-8">
+        </head>
+        <body>
+            <h1>Test</h1>
+            <script>
+                console.log('fetch stream');
+                fetch('/stream').then(async response => {
+                    console.log('response');
+                    const reader = response.body.getReader();
+                    while(true) {
+                        const {done, value} = await reader.read();
+
+                        if (done) {
+                            console.log("Done!");
+                            break;
+                        }
+
+                        // value is Uint8Array of the chunk bytes
+                        var str = String.fromCharCode.apply(null, value);
+                        console.log(str.length);
+                    }
+                });
+            </script>
+        </body>
+</html>
